@@ -8,14 +8,13 @@ import java.util.ListIterator;
 
 import br.com.desafiodev.modelo.Endereco;
 
-public class EnderecoFactory {
+public class EnderecoRequest {
 
 	private Endereco end;
 	
 	private List<Endereco>listaEndereco =  new ArrayList<Endereco>();
 	
-	public EnderecoFactory(){
-		end = new Endereco();
+	public EnderecoRequest(){		
 	}
 
 	public Endereco getEnd() {
@@ -34,19 +33,23 @@ public class EnderecoFactory {
 	
 	@Override
 	public String toString() {
-		
-		return "EnderecoFactory [end=" + end + ", listaEndereco=" + listaEndereco + "]";
+			return "EnderecoFactory [end=" + end + ", listaEndereco=" + listaEndereco + "]";
 	}
-
+	
+	
+	/**
+	 * Método responsável por receber a requisição com os parametros conforme contrato.
+	 * Esperamos receber uma String, separando os parametros por "," e cada endereço por; 
+	 * @param endereco
+	 * @return List
+	 */
 	public List<Endereco> getReceEndereco(String endereco){
-		//ArrayList listaAux = new ArrayList();		
-				//endereco = endereco.replaceAll("*$&%#()'^~><", "#");
 		if(!"".equals(endereco) && endereco != null){			
 						
 			String[] listaAux = endereco.split(";");
 			String[] listaSeparadora;
-			//int tamanhoEnderecos = listaAux.length;	
 			for(int i = 0; i < listaAux.length; i++){
+				end = new Endereco();
 				listaSeparadora = listaAux[i].split(",");
 					end.setStreet(listaSeparadora[0].toString());
 					end.setNumber(listaSeparadora[1].toString());					
