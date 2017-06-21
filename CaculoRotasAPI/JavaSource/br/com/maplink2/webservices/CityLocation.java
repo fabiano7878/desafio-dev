@@ -20,6 +20,8 @@ public class CityLocation  implements java.io.Serializable {
 
     private boolean capital;
 
+    private boolean addressesAvailable;
+
     public CityLocation() {
     }
 
@@ -29,13 +31,15 @@ public class CityLocation  implements java.io.Serializable {
            boolean carAccess,
            java.lang.String zipRangeStart,
            java.lang.String zipRangeEnd,
-           boolean capital) {
+           boolean capital,
+           boolean addressesAvailable) {
            this.city = city;
            this.point = point;
            this.carAccess = carAccess;
            this.zipRangeStart = zipRangeStart;
            this.zipRangeEnd = zipRangeEnd;
            this.capital = capital;
+           this.addressesAvailable = addressesAvailable;
     }
 
 
@@ -158,6 +162,26 @@ public class CityLocation  implements java.io.Serializable {
         this.capital = capital;
     }
 
+
+    /**
+     * Gets the addressesAvailable value for this CityLocation.
+     * 
+     * @return addressesAvailable
+     */
+    public boolean isAddressesAvailable() {
+        return addressesAvailable;
+    }
+
+
+    /**
+     * Sets the addressesAvailable value for this CityLocation.
+     * 
+     * @param addressesAvailable
+     */
+    public void setAddressesAvailable(boolean addressesAvailable) {
+        this.addressesAvailable = addressesAvailable;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof CityLocation)) return false;
@@ -183,7 +207,8 @@ public class CityLocation  implements java.io.Serializable {
             ((this.zipRangeEnd==null && other.getZipRangeEnd()==null) || 
              (this.zipRangeEnd!=null &&
               this.zipRangeEnd.equals(other.getZipRangeEnd()))) &&
-            this.capital == other.isCapital();
+            this.capital == other.isCapital() &&
+            this.addressesAvailable == other.isAddressesAvailable();
         __equalsCalc = null;
         return _equals;
     }
@@ -209,6 +234,7 @@ public class CityLocation  implements java.io.Serializable {
             _hashCode += getZipRangeEnd().hashCode();
         }
         _hashCode += (isCapital() ? Boolean.TRUE : Boolean.FALSE).hashCode();
+        _hashCode += (isAddressesAvailable() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -254,6 +280,12 @@ public class CityLocation  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("capital");
         elemField.setXmlName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "capital"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("addressesAvailable");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "addressesAvailable"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

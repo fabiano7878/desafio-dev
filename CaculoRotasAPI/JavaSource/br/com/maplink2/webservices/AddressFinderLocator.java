@@ -22,7 +22,7 @@ public class AddressFinderLocator extends org.apache.axis.client.Service impleme
     }
 
     // Use to get a proxy class for AddressFinderSoap
-    private java.lang.String AddressFinderSoap_address = "http://services.maplink.com.br/webservices/v3/AddressFinder/AddressFinder.asmx";
+    private java.lang.String AddressFinderSoap_address = "http://services.maplink.com.br/webservices/v3.1/AddressFinder/AddressFinder.asmx";
 
     public java.lang.String getAddressFinderSoapAddress() {
         return AddressFinderSoap_address;

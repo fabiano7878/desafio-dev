@@ -56,6 +56,18 @@ public class AddressFinderSoapProxy implements br.com.maplink2.webservices.Addre
     return addressFinderSoap.findAddress(address, ao, token);
   }
   
+  public br.com.maplink2.webservices.RoadInfo findRoad(br.com.maplink2.webservices.Road road, java.lang.String token) throws java.rmi.RemoteException{
+    if (addressFinderSoap == null)
+      _initAddressFinderSoapProxy();
+    return addressFinderSoap.findRoad(road, token);
+  }
+  
+  public br.com.maplink2.webservices.DistrictInfo findDistrict(br.com.maplink2.webservices.District district, br.com.maplink2.webservices.ResultRange rr, java.lang.String token) throws java.rmi.RemoteException{
+    if (addressFinderSoap == null)
+      _initAddressFinderSoapProxy();
+    return addressFinderSoap.findDistrict(district, rr, token);
+  }
+  
   public br.com.maplink2.webservices.AddressLocation getAddress(br.com.maplink2.webservices.Point point, java.lang.String token, double tolerance) throws java.rmi.RemoteException{
     if (addressFinderSoap == null)
       _initAddressFinderSoapProxy();
@@ -68,6 +80,12 @@ public class AddressFinderSoapProxy implements br.com.maplink2.webservices.Addre
     return addressFinderSoap.getXY(address, token);
   }
   
+  public br.com.maplink2.webservices.Point getRoadXY(br.com.maplink2.webservices.Road road, java.lang.String token) throws java.rmi.RemoteException{
+    if (addressFinderSoap == null)
+      _initAddressFinderSoapProxy();
+    return addressFinderSoap.getRoadXY(road, token);
+  }
+  
   public br.com.maplink2.webservices.MapInfo getXYRadiusWithMap(br.com.maplink2.webservices.Address address, br.com.maplink2.webservices.MapOptions mo, int radius, java.lang.String token) throws java.rmi.RemoteException{
     if (addressFinderSoap == null)
       _initAddressFinderSoapProxy();
@@ -78,18 +96,6 @@ public class AddressFinderSoapProxy implements br.com.maplink2.webservices.Addre
     if (addressFinderSoap == null)
       _initAddressFinderSoapProxy();
     return addressFinderSoap.findCity(cidade, ao, token);
-  }
-  
-  public br.com.maplink2.webservices.CrossStreetLocation[] getCrossStreetXY(br.com.maplink2.webservices.City cidade, java.lang.String firstStreet, java.lang.String secondStreet, java.lang.String token) throws java.rmi.RemoteException{
-    if (addressFinderSoap == null)
-      _initAddressFinderSoapProxy();
-    return addressFinderSoap.getCrossStreetXY(cidade, firstStreet, secondStreet, token);
-  }
-  
-  public br.com.maplink2.webservices.AddressLocation[] getCrossStreetAddress(br.com.maplink2.webservices.Point point, java.lang.String token) throws java.rmi.RemoteException{
-    if (addressFinderSoap == null)
-      _initAddressFinderSoapProxy();
-    return addressFinderSoap.getCrossStreetAddress(point, token);
   }
   
   

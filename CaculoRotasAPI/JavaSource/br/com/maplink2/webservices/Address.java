@@ -18,6 +18,8 @@ public class Address  implements java.io.Serializable {
 
     private br.com.maplink2.webservices.City city;
 
+    private java.lang.String zone;
+
     public Address() {
     }
 
@@ -26,12 +28,14 @@ public class Address  implements java.io.Serializable {
            java.lang.String houseNumber,
            java.lang.String zip,
            java.lang.String district,
-           br.com.maplink2.webservices.City city) {
+           br.com.maplink2.webservices.City city,
+           java.lang.String zone) {
            this.street = street;
            this.houseNumber = houseNumber;
            this.zip = zip;
            this.district = district;
            this.city = city;
+           this.zone = zone;
     }
 
 
@@ -134,6 +138,26 @@ public class Address  implements java.io.Serializable {
         this.city = city;
     }
 
+
+    /**
+     * Gets the zone value for this Address.
+     * 
+     * @return zone
+     */
+    public java.lang.String getZone() {
+        return zone;
+    }
+
+
+    /**
+     * Sets the zone value for this Address.
+     * 
+     * @param zone
+     */
+    public void setZone(java.lang.String zone) {
+        this.zone = zone;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof Address)) return false;
@@ -160,7 +184,10 @@ public class Address  implements java.io.Serializable {
               this.district.equals(other.getDistrict()))) &&
             ((this.city==null && other.getCity()==null) || 
              (this.city!=null &&
-              this.city.equals(other.getCity())));
+              this.city.equals(other.getCity()))) &&
+            ((this.zone==null && other.getZone()==null) || 
+             (this.zone!=null &&
+              this.zone.equals(other.getZone())));
         __equalsCalc = null;
         return _equals;
     }
@@ -186,6 +213,9 @@ public class Address  implements java.io.Serializable {
         }
         if (getCity() != null) {
             _hashCode += getCity().hashCode();
+        }
+        if (getZone() != null) {
+            _hashCode += getZone().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -229,6 +259,13 @@ public class Address  implements java.io.Serializable {
         elemField.setFieldName("city");
         elemField.setXmlName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "city"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "City"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("zone");
+        elemField.setXmlName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "zone"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
     }

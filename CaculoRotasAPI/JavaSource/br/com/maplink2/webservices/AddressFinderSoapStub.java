@@ -16,7 +16,7 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[8];
+        _operations = new org.apache.axis.description.OperationDesc[9];
         _initOperationDesc1();
     }
 
@@ -59,6 +59,36 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
         _operations[1] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("findRoad");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "road"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "Road"), br.com.maplink2.webservices.Road.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "RoadInfo"));
+        oper.setReturnClass(br.com.maplink2.webservices.RoadInfo.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "findRoadResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[2] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("findDistrict");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "district"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "District"), br.com.maplink2.webservices.District.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "rr"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ResultRange"), br.com.maplink2.webservices.ResultRange.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "DistrictInfo"));
+        oper.setReturnClass(br.com.maplink2.webservices.DistrictInfo.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "findDistrictResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[3] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getAddress");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "point"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "Point"), br.com.maplink2.webservices.Point.class, false, false);
         oper.addParameter(param);
@@ -72,7 +102,7 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "getAddressResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[2] = oper;
+        _operations[4] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getXY");
@@ -86,7 +116,21 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "getXYResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[3] = oper;
+        _operations[5] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("getRoadXY");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "road"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "Road"), br.com.maplink2.webservices.Road.class, false, false);
+        oper.addParameter(param);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "Point"));
+        oper.setReturnClass(br.com.maplink2.webservices.Point.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "getRoadXYResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[6] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("getXYRadiusWithMap");
@@ -104,7 +148,7 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "getXYRadiusWithMapResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[4] = oper;
+        _operations[7] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("findCity");
@@ -120,45 +164,7 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
         oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "findCityResult"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[5] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetCrossStreetXY");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "cidade"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "City"), br.com.maplink2.webservices.City.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "firstStreet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "secondStreet"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ArrayOfCrossStreetLocation"));
-        oper.setReturnClass(br.com.maplink2.webservices.CrossStreetLocation[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "GetCrossStreetXYResult"));
-        param = oper.getReturnParamDesc();
-        param.setItemQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "CrossStreetLocation"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[6] = oper;
-
-        oper = new org.apache.axis.description.OperationDesc();
-        oper.setName("GetCrossStreetAddress");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "point"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "Point"), br.com.maplink2.webservices.Point.class, false, false);
-        oper.addParameter(param);
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "token"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
-        param.setOmittable(true);
-        oper.addParameter(param);
-        oper.setReturnType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ArrayOfAddressLocation"));
-        oper.setReturnClass(br.com.maplink2.webservices.AddressLocation[].class);
-        oper.setReturnQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "GetCrossStreetAddressResult"));
-        param = oper.getReturnParamDesc();
-        param.setItemQName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "AddressLocation"));
-        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
-        oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[7] = oper;
+        _operations[8] = oper;
 
     }
 
@@ -237,12 +243,12 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ArrayOfCrossStreetLocation");
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ArrayOfDistrictLocation");
             cachedSerQNames.add(qName);
-            cls = br.com.maplink2.webservices.CrossStreetLocation[].class;
+            cls = br.com.maplink2.webservices.DistrictLocation[].class;
             cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "CrossStreetLocation");
-            qName2 = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "CrossStreetLocation");
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "DistrictLocation");
+            qName2 = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "DistrictLocation");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -252,6 +258,15 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "POILocation");
             qName2 = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "POILocation");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ArrayOfRoadLocation");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.RoadLocation[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "RoadLocation");
+            qName2 = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "RoadLocation");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -276,9 +291,23 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
 
-            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "CrossStreetLocation");
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "District");
             cachedSerQNames.add(qName);
-            cls = br.com.maplink2.webservices.CrossStreetLocation.class;
+            cls = br.com.maplink2.webservices.District.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "DistrictInfo");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.DistrictInfo.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "DistrictLocation");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.DistrictLocation.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -335,6 +364,34 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
             qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "ResultRange");
             cachedSerQNames.add(qName);
             cls = br.com.maplink2.webservices.ResultRange.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "Road");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.Road.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "RoadDetail");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.RoadDetail.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "RoadInfo");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.RoadInfo.class;
+            cachedSerClasses.add(cls);
+            cachedSerFactories.add(beansf);
+            cachedDeserFactories.add(beandf);
+
+            qName = new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "RoadLocation");
+            cachedSerQNames.add(qName);
+            cls = br.com.maplink2.webservices.RoadLocation.class;
             cachedSerClasses.add(cls);
             cachedSerFactories.add(beansf);
             cachedDeserFactories.add(beandf);
@@ -473,12 +530,80 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public br.com.maplink2.webservices.AddressLocation getAddress(br.com.maplink2.webservices.Point point, java.lang.String token, double tolerance) throws java.rmi.RemoteException {
+    public br.com.maplink2.webservices.RoadInfo findRoad(br.com.maplink2.webservices.Road road, java.lang.String token) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[2]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://webservices.maplink2.com.br/findRoad");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "findRoad"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {road, token});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (br.com.maplink2.webservices.RoadInfo) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (br.com.maplink2.webservices.RoadInfo) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.maplink2.webservices.RoadInfo.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public br.com.maplink2.webservices.DistrictInfo findDistrict(br.com.maplink2.webservices.District district, br.com.maplink2.webservices.ResultRange rr, java.lang.String token) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[3]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://webservices.maplink2.com.br/findDistrict");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "findDistrict"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {district, rr, token});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (br.com.maplink2.webservices.DistrictInfo) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (br.com.maplink2.webservices.DistrictInfo) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.maplink2.webservices.DistrictInfo.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public br.com.maplink2.webservices.AddressLocation getAddress(br.com.maplink2.webservices.Point point, java.lang.String token, double tolerance) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[4]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://webservices.maplink2.com.br/getAddress");
         _call.setEncodingStyle(null);
@@ -512,7 +637,7 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[3]);
+        _call.setOperation(_operations[5]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://webservices.maplink2.com.br/getXY");
         _call.setEncodingStyle(null);
@@ -541,12 +666,46 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
 }
     }
 
+    public br.com.maplink2.webservices.Point getRoadXY(br.com.maplink2.webservices.Road road, java.lang.String token) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://webservices.maplink2.com.br/getRoadXY");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "getRoadXY"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {road, token});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return (br.com.maplink2.webservices.Point) _resp;
+            } catch (java.lang.Exception _exception) {
+                return (br.com.maplink2.webservices.Point) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.maplink2.webservices.Point.class);
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
     public br.com.maplink2.webservices.MapInfo getXYRadiusWithMap(br.com.maplink2.webservices.Address address, br.com.maplink2.webservices.MapOptions mo, int radius, java.lang.String token) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[4]);
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://webservices.maplink2.com.br/getXYRadiusWithMap");
         _call.setEncodingStyle(null);
@@ -580,7 +739,7 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[5]);
+        _call.setOperation(_operations[8]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://webservices.maplink2.com.br/findCity");
         _call.setEncodingStyle(null);
@@ -602,74 +761,6 @@ public class AddressFinderSoapStub extends org.apache.axis.client.Stub implement
                 return (br.com.maplink2.webservices.CityLocationInfo) _resp;
             } catch (java.lang.Exception _exception) {
                 return (br.com.maplink2.webservices.CityLocationInfo) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.maplink2.webservices.CityLocationInfo.class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public br.com.maplink2.webservices.CrossStreetLocation[] getCrossStreetXY(br.com.maplink2.webservices.City cidade, java.lang.String firstStreet, java.lang.String secondStreet, java.lang.String token) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[6]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://webservices.maplink2.com.br/GetCrossStreetXY");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "GetCrossStreetXY"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {cidade, firstStreet, secondStreet, token});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (br.com.maplink2.webservices.CrossStreetLocation[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (br.com.maplink2.webservices.CrossStreetLocation[]) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.maplink2.webservices.CrossStreetLocation[].class);
-            }
-        }
-  } catch (org.apache.axis.AxisFault axisFaultException) {
-  throw axisFaultException;
-}
-    }
-
-    public br.com.maplink2.webservices.AddressLocation[] getCrossStreetAddress(br.com.maplink2.webservices.Point point, java.lang.String token) throws java.rmi.RemoteException {
-        if (super.cachedEndpoint == null) {
-            throw new org.apache.axis.NoEndPointException();
-        }
-        org.apache.axis.client.Call _call = createCall();
-        _call.setOperation(_operations[7]);
-        _call.setUseSOAPAction(true);
-        _call.setSOAPActionURI("http://webservices.maplink2.com.br/GetCrossStreetAddress");
-        _call.setEncodingStyle(null);
-        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
-        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
-        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
-        _call.setOperationName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "GetCrossStreetAddress"));
-
-        setRequestHeaders(_call);
-        setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {point, token});
-
-        if (_resp instanceof java.rmi.RemoteException) {
-            throw (java.rmi.RemoteException)_resp;
-        }
-        else {
-            extractAttachments(_call);
-            try {
-                return (br.com.maplink2.webservices.AddressLocation[]) _resp;
-            } catch (java.lang.Exception _exception) {
-                return (br.com.maplink2.webservices.AddressLocation[]) org.apache.axis.utils.JavaUtils.convert(_resp, br.com.maplink2.webservices.AddressLocation[].class);
             }
         }
   } catch (org.apache.axis.AxisFault axisFaultException) {

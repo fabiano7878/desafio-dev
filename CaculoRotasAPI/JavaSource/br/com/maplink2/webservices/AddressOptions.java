@@ -8,8 +8,6 @@
 package br.com.maplink2.webservices;
 
 public class AddressOptions  implements java.io.Serializable {
-    private int matchType;
-
     private boolean usePhonetic;
 
     private int searchType;
@@ -20,34 +18,12 @@ public class AddressOptions  implements java.io.Serializable {
     }
 
     public AddressOptions(
-           int matchType,
            boolean usePhonetic,
            int searchType,
            br.com.maplink2.webservices.ResultRange resultRange) {
-           this.matchType = matchType;
            this.usePhonetic = usePhonetic;
            this.searchType = searchType;
            this.resultRange = resultRange;
-    }
-
-
-    /**
-     * Gets the matchType value for this AddressOptions.
-     * 
-     * @return matchType
-     */
-    public int getMatchType() {
-        return matchType;
-    }
-
-
-    /**
-     * Sets the matchType value for this AddressOptions.
-     * 
-     * @param matchType
-     */
-    public void setMatchType(int matchType) {
-        this.matchType = matchType;
     }
 
 
@@ -122,7 +98,6 @@ public class AddressOptions  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
-            this.matchType == other.getMatchType() &&
             this.usePhonetic == other.isUsePhonetic() &&
             this.searchType == other.getSearchType() &&
             ((this.resultRange==null && other.getResultRange()==null) || 
@@ -139,7 +114,6 @@ public class AddressOptions  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
-        _hashCode += getMatchType();
         _hashCode += (isUsePhonetic() ? Boolean.TRUE : Boolean.FALSE).hashCode();
         _hashCode += getSearchType();
         if (getResultRange() != null) {
@@ -156,12 +130,6 @@ public class AddressOptions  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "AddressOptions"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("matchType");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "matchType"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "int"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("usePhonetic");
         elemField.setXmlName(new javax.xml.namespace.QName("http://webservices.maplink2.com.br", "usePhonetic"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
