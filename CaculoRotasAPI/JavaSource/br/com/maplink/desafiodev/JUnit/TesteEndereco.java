@@ -1,7 +1,7 @@
-package br.com.maplink.desafiodev.teste;
+package br.com.maplink.desafiodev.JUnit;
 
+import java.io.IOException;
 import java.rmi.RemoteException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -10,7 +10,8 @@ import java.util.ResourceBundle;
 import javax.xml.rpc.ServiceException;
 
 import br.com.maplink.desafiodev.implementacao.EnderecoRequest;
-import br.com.maplink.desafiodev.modelo.Endereco;
+import br.com.maplink.desafiodev.io.servicos.JSONEscrita;
+import br.com.maplink.desafiodev.io.servicos.JSONLeitura;
 import br.com.maplink.desafiodev.webservice.servicos.BuscaEndereco;
 
 public class TesteEndereco {
@@ -19,7 +20,7 @@ public class TesteEndereco {
 	
 	private BuscaEndereco buscaEnd = new BuscaEndereco();
 	
-	public static <V> void main(String [] args) throws RemoteException, ServiceException{
+	public static <V> void main(String [] args) throws ServiceException, IOException{
 		
 		//String dados = "Rua Ibiporã, 101, São Pàulo, SP;Rua Ataulfo Alves, 428 - casa 02, São Paulo, SP.";
 				
@@ -33,6 +34,12 @@ public class TesteEndereco {
 		teste.getEnd().getEnderecosEntrada(dados);
 		
 		List<HashMap> listaHAsh = teste.getBuscaEnd().getBuscaEndereco(teste.getEnd().getListaEndereco());
+		
+	/*	JSONEscrita j = new JSONEscrita();
+		j.escreveJSON();*/
+		
+		JSONLeitura l = new JSONLeitura();
+		l.leituraJSON();
 		
 		for(HashMap lista:listaHAsh){
 			System.out.println(lista.get("Zip code"));

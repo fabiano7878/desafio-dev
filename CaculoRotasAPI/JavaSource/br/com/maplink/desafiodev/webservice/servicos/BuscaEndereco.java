@@ -5,14 +5,12 @@ import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Locale;
-import java.util.Map;
-import java.util.ResourceBundle;
 
 import javax.xml.rpc.ServiceException;
 
 import br.com.maplink.desafiodev.implementacao.EnderecoRequest;
 import br.com.maplink.desafiodev.modelo.Endereco;
+import br.com.maplink.desafiodev.util.Util;
 import br.com.maplink2.webservices.Address;
 import br.com.maplink2.webservices.AddressFinderLocator;
 import br.com.maplink2.webservices.AddressInfo;
@@ -28,11 +26,10 @@ public class BuscaEndereco implements Serializable{
 	public List<HashMap> getBuscaEndereco(List<Endereco> lista) throws RemoteException, ServiceException{
 
 		//Bundle local com a chave do token
-		Locale ptBR = new Locale("pt","BR");
-		ResourceBundle bundle = ResourceBundle.getBundle("br.com.maplink.desafiodev.resource.messages", ptBR);
-		final String TOKEN = bundle.getString("token").toString();
 
-		final String NEW_LINE = "\n";
+		final String TOKEN = Util.retornaPropiedades("token", "acesso").toString();
+
+		final String NEW_LINE = Util.retornaPropiedades("newLine", "messages").toString();
 
 		List<Endereco> listaEndereco =  lista;
 
@@ -115,6 +112,5 @@ public class BuscaEndereco implements Serializable{
 
 		return listaHash;
 	}
-
 
 }

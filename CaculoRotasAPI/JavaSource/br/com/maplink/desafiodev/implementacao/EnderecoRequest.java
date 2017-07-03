@@ -1,10 +1,15 @@
 package br.com.maplink.desafiodev.implementacao;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Locale;
+import java.util.Properties;
+import java.util.ResourceBundle;
 
 import br.com.maplink.desafiodev.modelo.Endereco;
 
@@ -13,6 +18,8 @@ public class EnderecoRequest {
 	private Endereco end;
 	
 	private List<Endereco>listaEndereco =  new ArrayList<Endereco>();
+	
+	private Properties props;
 	
 	public EnderecoRequest(){		
 	}
@@ -62,14 +69,32 @@ public class EnderecoRequest {
 			
 		}else{
 			
-			new NullPointerException("Dados do Endereço são Invalidos!");
+			throw new NullPointerException("Dados do Endereço são Invalidos!");
 		}
 		
 		
 		return this.listaEndereco;
 	}
 	
-	
-	
+	public List<String[]> DadosReqEndereco(){
+		String [] dados = null;
+		List<String[]>listaBundle = new ArrayList();
+		String nomeProperties = "messages.properties";
+		props = new Properties();
+		InputStream itens = this.getClass().getResourceAsStream(nomeProperties);
+		try{
+			props.load(itens);
+			itens.close();
+			
+			for(int i = 0; i < props.size(); i++ ){
+								
+			}
+			
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		return listaBundle;
+	}
 	
 }
